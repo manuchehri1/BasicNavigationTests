@@ -1,9 +1,9 @@
 package com.cbt.tests;
 
-import com.cbt.utilities.BrowserFactory2;
+import com.cbt.utilities.BrowserFactory;
 import com.cbt.utilities.BrowserUtils;
 import com.cbt.utilities.StringUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,7 +13,7 @@ public class NavigationTests {
     }
 
     public  static void chromeTest() {
-       WebDriver driver = BrowserFactory2.driverCreator("chrome");
+       WebDriver driver = BrowserFactory.getDriver("chrome");
        driver.get("http://google.com");
         BrowserUtils.wait(2);
         String google = driver.getTitle();  /// "Google"
@@ -42,7 +42,7 @@ public class NavigationTests {
 
     }
     public static void fireFoxTest(){
-        WebDriver driver = BrowserFactory2.driverCreator("firefox");
+        WebDriver driver = BrowserFactory.getDriver("firefox");
         driver.get("http://google.com");
         BrowserUtils.wait(2);
         String google = driver.getTitle();  /// "Google"
@@ -67,7 +67,7 @@ public class NavigationTests {
         driver.quit();
     }
     public static void safariTest(){
-        WebDriver driver = BrowserFactory2.driverCreator("safari");
+        WebDriver driver = BrowserFactory.getDriver("safari");
         driver.get("http://google.com");
         BrowserUtils.wait(2);
         String google = driver.getTitle();  /// "Google"

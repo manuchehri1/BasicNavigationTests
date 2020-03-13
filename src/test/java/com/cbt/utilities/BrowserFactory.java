@@ -15,6 +15,7 @@ public class BrowserFactory {
         }else if (browserName.equalsIgnoreCase("edge")){
             return null;
         } else if (browserName.equalsIgnoreCase("safari")){
+
             return new SafariDriver();
         }
         else{
